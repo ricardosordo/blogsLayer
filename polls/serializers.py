@@ -1,7 +1,8 @@
-from rest_framework import routers
-from .api import BlogViewSet
+from rest_framework import serializers
+from .models import Blog
 
-router = routers.DefaultRouter()
-router.register('api/v1/blog', BlogViewSet, 'blog')
-
-urlpatterns = router.urls
+class BlogSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Blog
+        fields = ('id', 'title', 'description', 'date', 'urlCTA', 'imgPost', 'create_at')
+        read_only_fields = ('created_at',)

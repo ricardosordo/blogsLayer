@@ -1,5 +1,5 @@
 from django.db import models
-from blog.storage_backends import PublicMediaStorage
+from .storages_backends import PublicMediaStorage
 
 
 # Create your models here.
